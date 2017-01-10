@@ -46,7 +46,7 @@ sudo apt-key add dotdeb.gpg
 rm dotdeb.gpg
 sudo apt-get update
 
-sudo apt-get install -y curl php7.0 php7.0-mcrypt php7.0-imagick php7.0-mysql php7.0-curl php7.0-gd php7.0-bcmath
+sudo apt-get install -y curl php7.0 php7.0-mcrypt php7.0-imagick php7.0-mysql php7.0-curl php7.0-gd php7.0-bcmath php7.0-mbstring
 
 # changing apache user group
 
