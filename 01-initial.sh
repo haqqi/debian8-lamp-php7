@@ -11,7 +11,8 @@ apt-get update
 apt-get install sudo -y
 
 # setup new user
-adduser $SUDO_USER
+adduser --quiet --disabled-password --gecos "$SUDO_USER" $SUDO_USER
+echo "$SUDO_USER:$SUDO_PASSWD" | chpasswd
 usermod -a -G sudo $SUDO_USER
 su - $SUDO_USER
 
