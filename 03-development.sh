@@ -21,3 +21,5 @@ echo -e "Install nodejs 6 & bower"
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt-get install -y nodejs
 sudo npm install -g bower
+
+wget -O /var/www/html/adm.php https://github.com/vrana/adminer/releases/download/v4.2.5/adminer-4.2.5-mysql-en.php
