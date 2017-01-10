@@ -30,13 +30,6 @@ echo -e "-- Installing Apache web server...\n"
 sudo apt-get install -y apache2
 echo -e "-- Finish installing Apache web server.\n\n"
 
-# create symbolic link
-if ! [ -L /var/www ]; then
-  mkdir ~/web
-  sudo rm -rf /var/www/html
-  sudo ln -fs ~/web /var/www/html
-fi
-
 # installing php 7
 grep -q -F 'deb http://packages.dotdeb.org jessie all' /etc/apt/sources.list || echo "deb http://packages.dotdeb.org jessie all" | sudo tee -a /etc/apt/sources.list
 grep -q -F 'deb-src http://packages.dotdeb.org jessie all' /etc/apt/sources.list || echo "deb-src http://packages.dotdeb.org jessie all" | sudo tee -a /etc/apt/sources.list
