@@ -9,6 +9,7 @@ SUDO_PASSWD=haqqi
 # update package
 apt-get update
 apt-get install sudo -y
+apt-get install -y apt-transport-https
 
 # setup new user
 adduser --quiet --disabled-password --gecos "$SUDO_USER" $SUDO_USER
