@@ -39,13 +39,17 @@ sudo apt-key add dotdeb.gpg
 rm dotdeb.gpg
 sudo apt-get update
 
-sudo apt-get install -y curl php7.0 php7.0-mcrypt php7.0-imagick php7.0-mysql php7.0-curl php7.0-gd php7.0-bcmath php7.0-mbstring php7.0-dom php7.0-zip
+sudo apt-get install -y curl php7.0 php7.0-mcrypt php7.0-imagick php7.0-mysql php7.0-curl php7.0-gd php7.0-bcmath php7.0-mbstring php7.0-dom php7.0-zip php7.0-intl
 
 # changing apache user group
 
-echo -e "-- Changing user group of apache user...\n"
-sudo sed -i "s/APACHE_RUN_USER=.*/APACHE_RUN_USER=$APACHE_USER/g" /etc/apache2/envvars
-sudo sed -i "s/APACHE_RUN_GROUP=.*/APACHE_RUN_GROUP=$APACHE_GROUP/g" /etc/apache2/envvars
+# echo -e "-- Changing user group of apache user...\n"
+# sudo sed -i "s/APACHE_RUN_USER=.*/APACHE_RUN_USER=$APACHE_USER/g" /etc/apache2/envvars
+# sudo sed -i "s/APACHE_RUN_GROUP=.*/APACHE_RUN_GROUP=$APACHE_GROUP/g" /etc/apache2/envvars
+
+echo -e "-- Adding apache user to ssh user group...\n"
+
+sudo usermod -a -G APACHE_USER www-data
 
 echo -e "\n--- Enabling mod-rewrite ---\n"
 sudo a2enmod rewrite
