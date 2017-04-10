@@ -49,7 +49,7 @@ sudo apt-get install -y curl php7.0 php7.0-mcrypt php7.0-imagick php7.0-mysql ph
 
 echo -e "-- Adding apache user to ssh user group...\n"
 
-sudo usermod -a -G APACHE_USER www-data
+sudo usermod -a -G $APACHE_USER www-data
 
 echo -e "\n--- Enabling mod-rewrite ---\n"
 sudo a2enmod rewrite
